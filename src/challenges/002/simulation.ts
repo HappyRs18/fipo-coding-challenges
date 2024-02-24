@@ -1,3 +1,4 @@
-export function testFunc(x: number) {
-    return 42;
+export function simulatePopulation(years: number) {
+    if (years <= 0)
+        return 0;
 }
