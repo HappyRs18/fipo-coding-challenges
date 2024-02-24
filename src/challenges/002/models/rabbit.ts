@@ -1,4 +1,4 @@
-class Rabbit {
+export class Rabbit {
     public gender: Gender;
     public age: number;
     public isAdult: boolean;
