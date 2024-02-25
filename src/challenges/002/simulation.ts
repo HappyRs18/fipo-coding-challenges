@@ -42,7 +42,7 @@ export function simulatePopulation(years: number): number {
 
         // Adults reproduce :)
         const newBabies = rabbitsDoUghUghUgh(listOfAdultRabbits);
-        listOfChildRabbits.push(...newBabies.filter(x => x.age === 0));
+        listOfChildRabbits.push(...newBabies);
 
         listOfAdultRabbits.push(...listOfChildRabbits.filter(x => x.age !== 0));
         listOfChildRabbits = listOfChildRabbits.filter(x => x.age === 0);
