@@ -5,7 +5,7 @@ function createBabyRabbit(gender: Gender) {
     return new Rabbit(0, gender);
 }
 
-function rabbitsDoUghUghUgh(adultRabbits: Rabbit[]) {
+export function rabbitsDoUghUghUgh(adultRabbits: Rabbit[]) {
     const listOfNewBabyRabbits: Rabbit[] = [];
 
     const maleRabbits = adultRabbits.filter(x => x.gender === Gender.Male && x.age > 0);

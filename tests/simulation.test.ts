@@ -1,4 +1,22 @@
-import {simulatePopulation} from "../src/challenges/002/simulation";
+import {rabbitsDoUghUghUgh, simulatePopulation} from "../src/challenges/002/simulation";
+import {Rabbit} from "../src/challenges/002/models/rabbit";
+import {Gender} from "../src/challenges/002/enums/gender";
+
+test("should generate two baby rabbits if rabbits are adults", () => {
+    const adamAndEva = [
+        new Rabbit(1, Gender.Male),
+        new Rabbit(1, Gender.Female)
+    ];
+    expect(rabbitsDoUghUghUgh(adamAndEva).length).toBe(2);
+})
+
+test("should generate nothing if rabbits are not adults", () => {
+    const adamAndEva = [
+        new Rabbit(0, Gender.Male),
+        new Rabbit(0, Gender.Female)
+    ];
+    expect(rabbitsDoUghUghUgh(adamAndEva).length).toBe(0);
+})
 
 test("if population is 0 on year 0", () => {
     expect(simulatePopulation(0)).toBe(0);
