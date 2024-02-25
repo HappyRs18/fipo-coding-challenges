@@ -48,8 +48,5 @@ export function simulatePopulation(years: number): number {
         listOfChildRabbits = listOfChildRabbits.filter(x => x.age === 0);
     }
 
-    // These are newly created babies :)
-    const babyRabbits = listOfChildRabbits.filter(x => x.age === 0);
-
-    return babyRabbits.length;
+    return listOfChildRabbits.length;
 }
