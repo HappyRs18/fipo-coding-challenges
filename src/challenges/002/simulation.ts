@@ -18,8 +18,7 @@ function rabbitsDoUghUghUgh(adultRabbits: Rabbit[]) {
     );
 
     // Now make babies :)
-    for (const [maleRabbit, femaleRabbit] of pairings) {
-        const parents = [maleRabbit, femaleRabbit]
+    for (const rabbit of pairings) {
         listOfNewBabyRabbits.push(createBabyRabbit(Gender.Male));
         listOfNewBabyRabbits.push(createBabyRabbit(Gender.Female));
     }
