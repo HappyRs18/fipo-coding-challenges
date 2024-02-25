@@ -7,15 +7,11 @@ test("should generate two baby rabbits if rabbits are adults", () => {
         new Rabbit(1, Gender.Male),
         new Rabbit(1, Gender.Female)
     ];
-    expect(rabbitsDoUghUghUgh(adamAndEva).length).toBe(2);
+    expect(rabbitsDoUghUghUgh(adamAndEva.length / 2).length).toBe(2);
 })
 
 test("should generate nothing if rabbits are not adults", () => {
-    const adamAndEva = [
-        new Rabbit(0, Gender.Male),
-        new Rabbit(0, Gender.Female)
-    ];
-    expect(rabbitsDoUghUghUgh(adamAndEva).length).toBe(0);
+    expect(rabbitsDoUghUghUgh(0).length).toBe(0);
 })
 
 test("if population is 0 on year 0", () => {
@@ -44,3 +40,7 @@ test("if population is 10 on year 5", () => {
 test("if population is 150050 on year 25", () => {
     expect(simulatePopulation(25)).toBe(150050);
 });
+
+// test("if population is 25172538050 on year 50", () => {
+//     expect(simulatePopulation(50)).toBe(25172538050);
+// });
