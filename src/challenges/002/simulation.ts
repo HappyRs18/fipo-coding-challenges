@@ -44,8 +44,10 @@ export function simulatePopulation(years: number): number {
         const newBabies = rabbitsDoUghUghUgh(listOfAdultRabbits.length / 2);
         listOfChildRabbits = listOfChildRabbits.concat(newBabies);
 
-        // Concat
+        // Evolve children to adults.
         listOfAdultRabbits = listOfAdultRabbits.concat(listOfChildRabbits.filter(x => x.age !== 0));
+
+        // Overwrite list to give the next iteration the new born child, which can be evolved to adults.
         listOfChildRabbits = listOfChildRabbits.filter(x => x.age === 0);
     }
 
