@@ -2,6 +2,8 @@ import {rabbitsDoUghUghUgh, simulatePopulation} from "../src/challenges/002/simu
 import {Rabbit} from "../src/challenges/002/models/rabbit";
 import {Gender} from "../src/challenges/002/enums/gender";
 
+const useObjectVariant = false;
+
 test("should generate two baby rabbits if rabbits are adults", () => {
     const adamAndEva = [
         new Rabbit(1, Gender.Male),
@@ -15,32 +17,49 @@ test("should generate nothing if rabbits are not adults", () => {
 })
 
 test("if population is 0 on year 0", () => {
-    expect(simulatePopulation(0)).toBe(0);
+    expect(simulatePopulation(0, useObjectVariant)).toBe(0);
 });
 test("if population is 2 on year 1", () => {
-    expect(simulatePopulation(1)).toBe(2);
+    expect(simulatePopulation(1, useObjectVariant)).toBe(2);
 });
 
 test("if population is 2 on year 2", () => {
-    expect(simulatePopulation(2)).toBe(2);
+    expect(simulatePopulation(2, useObjectVariant)).toBe(2);
 });
 
 test("if population is 4 on year 3", () => {
-    expect(simulatePopulation(3)).toBe(4);
+    expect(simulatePopulation(3, useObjectVariant)).toBe(4);
 });
 
 test("if population is 6 on year 4", () => {
-    expect(simulatePopulation(4)).toBe(6);
+    expect(simulatePopulation(4, useObjectVariant)).toBe(6);
 });
 
 test("if population is 10 on year 5", () => {
-    expect(simulatePopulation(5)).toBe(10);
+    expect(simulatePopulation(5, useObjectVariant)).toBe(10);
 });
 
 test("if population is 150050 on year 25", () => {
-    expect(simulatePopulation(25)).toBe(150050);
+    expect(simulatePopulation(25, useObjectVariant)).toBe(150050);
 });
 
-// test("if population is 25172538050 on year 50", () => {
-//     expect(simulatePopulation(50)).toBe(25172538050);
-// });
+test("if population is 25172538050 on year 50", () => {
+    if (!useObjectVariant)
+        expect(simulatePopulation(50, useObjectVariant)).toBe(25172538050);
+
+    expect(true).toBe(true);
+});
+
+test("if population is 708449696358523830150 on year 100", () => {
+    if (!useObjectVariant)
+        expect(simulatePopulation(100, useObjectVariant)).toBe(708449696358523830150n);
+
+    expect(true).toBe(true);
+});
+
+test("if population is 278846449123395760279448765740814567900140513175394614528217925896651143245726581383115317752445042588250 on year 500", () => {
+    if (!useObjectVariant)
+        expect(simulatePopulation(500, useObjectVariant)).toBe(278846449123395760279448765740814567900140513175394614528217925896651143245726581383115317752445042588250n);
+
+    expect(true).toBe(true);
+});
