@@ -1,6 +1,7 @@
-import {rabbitsDoUghUghUgh, simulatePopulation} from "../src/challenges/002/simulation";
+import {fibonacciModifiedForRabbits, rabbitsDoUghUghUgh, simulatePopulation} from "../src/challenges/002/simulation";
 import {Rabbit} from "../src/challenges/002/models/rabbit";
 import {Gender} from "../src/challenges/002/enums/gender";
+import {intersectionTwo} from "../src/challenges/001/intersection";
 
 const useObjectVariant = false;
 
@@ -70,7 +71,22 @@ test("should print population from 0 to 12", () => {
         s.push(simulatePopulation(i, useObjectVariant));
     }
 
-    console.log(s.join(','));
-
     expect(true).toBe(true);
 });
+
+test("should print modified fibonacci numbers which simulates the population", () => {
+    const populationRabbits: number[] = [];
+    const fibonacciRabbitsNumbers: number[] = [];
+
+    for (let i = 1; i <= 10; i++) {
+        populationRabbits.push(Number(simulatePopulation(i, useObjectVariant)));
+        fibonacciRabbitsNumbers.push(Number(fibonacciModifiedForRabbits(i )));
+    }
+
+    expect(populationRabbits.length).toEqual(fibonacciRabbitsNumbers.length);
+    expect(intersectionTwo(populationRabbits, fibonacciRabbitsNumbers)).toStrictEqual(populationRabbits)
+})
+
+test("should be equal to simulate population", () => {
+    expect(fibonacciModifiedForRabbits(25)).toEqual(simulatePopulation(25, useObjectVariant));
+})

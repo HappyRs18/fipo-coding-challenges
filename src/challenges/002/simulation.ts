@@ -71,3 +71,10 @@ export function simulatePopulation(years: number, useObjects: boolean = false): 
 function convertToNumberIfUnderMaxValue(value: bigint): number | bigint {
     return value <= Number.MAX_SAFE_INTEGER ? Number(value) : BigInt(value);
 }
+
+export function fibonacciModifiedForRabbits(value: number): number {
+    if (value <= 2)
+        return 2;
+
+    return fibonacciModifiedForRabbits(value - 1) + fibonacciModifiedForRabbits(value - 2);
+}
