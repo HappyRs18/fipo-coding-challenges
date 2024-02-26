@@ -63,3 +63,14 @@ test("if population is 278846449123395760279448765740814567900140513175394614528
 
     expect(true).toBe(true);
 });
+
+test("should print population from 0 to 12", () => {
+    let s = [];
+    for (let i = 0; i < 12; i++) {
+        s.push(simulatePopulation(i, useObjectVariant));
+    }
+
+    console.log(s.join(','));
+
+    expect(true).toBe(true);
+});
