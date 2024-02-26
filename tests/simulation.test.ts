@@ -48,7 +48,7 @@ test("should print modified fibonacci numbers which simulates the population", (
 
     for (let i = 1; i <= 10; i++) {
         populationRabbits.push(Number(simulatePopulation(i, useObjectVariant)));
-        fibonacciRabbitsNumbers.push(Number(fibonacciModifiedForRabbits(i )));
+        fibonacciRabbitsNumbers.push(Number(fibonacciModifiedForRabbits(i)));
     }
 
     expect(populationRabbits.length).toEqual(fibonacciRabbitsNumbers.length);
@@ -56,5 +56,7 @@ test("should print modified fibonacci numbers which simulates the population", (
 })
 
 test("should be equal to simulate population", () => {
-    expect(fibonacciModifiedForRabbits(25)).toEqual(simulatePopulation(25, useObjectVariant));
+    for (let i = 1; i < 26; i++) {
+        expect(fibonacciModifiedForRabbits(i)).toEqual(simulatePopulation(i, useObjectVariant));
+    }
 })
