@@ -17,7 +17,7 @@ test("should generate nothing if rabbits are not adults", () => {
     expect(rabbitsDoUghUghUgh(0).length).toBe(0);
 })
 
-test("if comply testcases from suck", () => {
+test("should pass testcases from suck", () => {
     expect(simulatePopulation(0, useObjectVariant)).toBe(0);
     expect(simulatePopulation(1, useObjectVariant)).toBe(2);
     expect(simulatePopulation(2, useObjectVariant)).toBe(2);
